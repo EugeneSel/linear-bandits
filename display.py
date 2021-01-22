@@ -56,12 +56,12 @@ def display_board(image, board=None, boards=None, marker1='x', marker2='o', mark
         y, x = np.where(board < 0)
         ax.scatter(x, y, marker=marker2, s=marker_size, c=color2)
 
-def plot_regret(regrets, logscale=False, lb=None):
+def plot_regret(regrets, logscale=False, lb=None, figsize=(15,10)):
     """
     regrets must be a dict {'agent_id':regret_table}
     """
     
-    reg_plot = plt.figure()
+    reg_plot = plt.figure(figsize=figsize)
     #compute useful stats
 #     regret_stats = {}
     for i, agent_id in enumerate(regrets.keys()):
